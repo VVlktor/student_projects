@@ -4,6 +4,9 @@
 #include <ctime>
 #include "gtest/gtest.h"
 #include <chrono>
+#include "mojeBabelki.cpp"
+
+std::vector<int> vecc(10000);
 
 // Funkcja sortująca wektor za pomocą QuickSort
 void quickSort(std::vector<int>& vec) {
@@ -24,14 +27,23 @@ void quickSort(std::vector<int>& vec) {
 
 // Test wydajności sortowania QuickSort
 TEST(BenchmarkTest, QuickSortBenchmark) {
-    std::vector<int> vec(10000); // Tworzymy wektor z 10000 losowymi liczbami
-    std::srand(std::time(0)); // Inicjalizacja generatora liczb losowych
-    std::generate(vec.begin(), vec.end(), std::rand);
-
     // Początek pomiaru czasu
     auto start = std::chrono::high_resolution_clock::now();
+    vector<int> l=vecc;
+    quickSort(l); // Sortujemy wektor
 
-    quickSort(vec); // Sortujemy wektor
+    // Koniec pomiaru czasu
+    auto end = std::chrono::high_resolution_clock::now();
+    std::chrono::duration<double> elapsed_seconds = end - start;
+
+    std::cout << "Czas sortowania: " << elapsed_seconds.count() << "s\n";
+}
+//babyl sort
+TEST(BenchmarkTest, SortwanieBabelkowe) {
+    // Początek pomiaru czasu
+    auto start = std::chrono::high_resolution_clock::now();
+    vector<int> k = vecc;
+    Sortuj(k); // Sortujemy wektor
 
     // Koniec pomiaru czasu
     auto end = std::chrono::high_resolution_clock::now();
@@ -41,6 +53,9 @@ TEST(BenchmarkTest, QuickSortBenchmark) {
 }
 
 int main(int argc, char **argv) {
+    std::srand(std::time(0));
+    std::generate(vecc.begin(), vecc.end(), std::rand);//stworzenie wektora
+
     ::testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
 }
