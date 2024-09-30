@@ -1,13 +1,22 @@
 #include <iostream>
+#include <vector>
 
 using namespace std;
 
 int main(){
-    int liczby[5]={2,3,4,2,1};
-    int i=0;
-    for(int i=0; 5>i; i++)
+    string nowaliczba="";
+    vector<int> liczby;
+    while(true){
+	cout << "Podaj liczbe" << endl;
+	cin >> nowaliczba;
+	if(nowaliczba=="x"){
+	    break;
+	}
+	liczby.push_back(stoi(nowaliczba));
+    }
+    for(int i=0; i<liczby.size(); i++)
     {
-	for(int j=i; j<5; j++){
+	for(int j=i; j<liczby.size(); j++){
 	    if(liczby[i]>liczby[j])
 	    {
 		int a=liczby[i];
@@ -17,7 +26,7 @@ int main(){
 	}
     }
 
-    for(int o=0; o<5; o++){
+    for(int o=0; o<liczby.size(); o++){
 	cout << liczby[o] << endl;
     }
     return 0;
