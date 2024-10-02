@@ -38,7 +38,7 @@ TEST(BenchmarkTest, QuickSortBenchmark) {
 
     std::cout << "Czas sortowania: " << elapsed_seconds.count() << "s\n";
 }
-//babyl sort
+//Test wydajnosci sortowania BubbleSort
 TEST(BenchmarkTest, SortwanieBabelkowe) {
     // Początek pomiaru czasu
     auto start = std::chrono::high_resolution_clock::now();
