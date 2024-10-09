@@ -1,7 +1,5 @@
 # Benchmark: quicksort i bubblesort
-## W C++ Sprawdzono dwie metody sortowania: bubblesort i quicksort
-
-### Oto obie metody sortowania:
+## 1. W C++ Sprawdzono dwie metody sortowania: bubblesort i quicksort. Oto obie metody sortowania:
 ### Bubblesort:
 ```cpp
 void Sortuj(vector<int>& liczby){
@@ -38,7 +36,7 @@ void quickSort(std::vector<int>& vec) {
 ```
 
 
-Do funkcji sortujących przekazany został wektor posiadający te same dane.
+## 2. Do funkcji sortujących przekazany został wektor posiadający te same dane.
 Wyniki pokazują, że sortwanie bąbelkowe jest dużo wolniejsze od quicksorta (tak, wiem, to oczywiste)
 Wyniki prezetnują się nasępująco:
  - Quicksort: 0.0112293s
@@ -51,7 +49,7 @@ Oryginalne wyniki:
 ![3](https://github.com/user-attachments/assets/172fdb8a-1a0a-4bc2-b447-3aac41f1bb9b)
 Zrzut przedstawiający wyniki testów
 
-### Testy:
+## 3. Testy:
 ```cpp
 TEST(BenchmarkTest, QuickSortBenchmark) {
     // Początek pomiaru czasu
@@ -80,4 +78,5 @@ TEST(BenchmarkTest, SortwanieBabelkowe) {
 }
 ```
 
-### Wniosek: sortowanie quicksort jest dużo szybsze niż bubblesort.
+# 4. Wniosek:
+## Sortowanie quicksort jest dużo szybsze niż bubblesort. Po przeprowadzeniu wielokrotnych testów, wykazane zostało, iż quicksort jest szybszy od bubblesorta ok. 5-7 razy
