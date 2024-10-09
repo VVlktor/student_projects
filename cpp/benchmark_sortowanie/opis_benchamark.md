@@ -78,5 +78,5 @@ TEST(BenchmarkTest, SortwanieBabelkowe) {
 }
 ```
 
-# 4. Wniosek:
+## 4. Wniosek:
 ## Sortowanie quicksort jest dużo szybsze niż bubblesort. Po przeprowadzeniu wielokrotnych testów, wykazane zostało, iż quicksort jest szybszy od bubblesorta ok. 5-7 razy
