@@ -41,7 +41,7 @@ TEST(mojagrupatestow, testFizzBuzz) {
 }
 ```
 
-### 3. Wyniki niektórych testów:
+## 3. Wyniki niektórych testów:
 | Liczba | Wynik oczekiwany | Wynik podany przez program |
 | ---- | ---- | ---- |
 | 6 | Fizz | Fizz |
@@ -53,5 +53,5 @@ TEST(mojagrupatestow, testFizzBuzz) {
 Testy przeprowadzone na wszelkich liczbach całkowitych wskazywały poprawność działania programu.
 Testy okazały się w pełni sprawne a wyniki poprawne. <br>
 
-# 4. Wniosek
+## 4. Wniosek
 ## Testy ukazują poprawność działania programu. Fizz, Buzz oraz FizzBuzz zwracane są odpowiednio do wprowadzanych danych
