@@ -1,5 +1,5 @@
 # Benchmark: quicksort i bubblesort
-## 1. W C++ Sprawdzono dwie metody sortowania: bubblesort i quicksort. Oto obie metody sortowania:
+## 1. W C++ Sprawdzono dwie funkcje sortowania: bubblesort i quicksort. Oto oba sposoby sortowania:
 ### Bubblesort:
 ```cpp
 void Sortuj(vector<int>& liczby){
