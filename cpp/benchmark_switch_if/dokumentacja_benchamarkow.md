@@ -1,5 +1,5 @@
 # Test if i switch
-## Testy
+# 1. Testy
 Testowanie szybkości działania `switcha` i `if` w języku C++ wyglądało następująco:
 Losowana była jedna liczba, ktora nastepnie przekazywana była do obu funkcji, przez co oba testy przeprowadzane były na tych samych danych.
 
