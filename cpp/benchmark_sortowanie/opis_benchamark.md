@@ -47,7 +47,7 @@ Wyniki prezetnują się nasępująco:
 Oryginalne wyniki:
 
 ![3](https://github.com/user-attachments/assets/172fdb8a-1a0a-4bc2-b447-3aac41f1bb9b)
-Zrzut przedstawiający wyniki testów
+Zdj. 1: Zrzut przedstawiający wyniki testów
 
 ## 3. Testy:
 ```cpp
