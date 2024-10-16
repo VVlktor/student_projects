@@ -1,7 +1,7 @@
 # Testowanie funkcji FizzBuzz
 
-## 1. W języku C++ napisano funkcje FizzBuzz
-
+## 1. Funkcje FizzBuzz
+W języku C++ napisano funkcje FizzBuzz
 ```cpp
 string FizzBuzz(int a){
     if(a%3==0 && a%5==0){
@@ -19,7 +19,7 @@ string FizzBuzz(int a){
 Funkcja ma na celu zwrócenie Fizz jesli podana liczba jest podzielna przez 3, Buzz jesli jest podzielna przez 5, a FizzBuzz jesli podzielna jest orzez obie te liczby.
 Gdy funkcja nie spełnia żadnego z powyrzszych warunków, zwracany jest pusty string.
 
-## 2. Testy do owej funkcji:
+## 2. Testy
 
 ```cpp
 TEST(mojagrupatestow, testFizz) {
@@ -41,7 +41,7 @@ TEST(mojagrupatestow, testFizzBuzz) {
 }
 ```
 
-## 3. Wyniki niektórych testów:
+## 3. Wyniki testów
 | Liczba | Wynik oczekiwany | Wynik podany przez program |
 | ---- | ---- | ---- |
 | 6 | Fizz | Fizz |
@@ -54,4 +54,4 @@ Testy przeprowadzone na wszelkich liczbach całkowitych wskazywały poprawność
 Testy okazały się w pełni sprawne a wyniki poprawne. <br>
 
 ## 4. Wniosek
-## Testy ukazują poprawność działania programu. Fizz, Buzz oraz FizzBuzz zwracane są odpowiednio do wprowadzanych danych
+### Testy ukazują poprawność działania programu. Fizz, Buzz oraz FizzBuzz zwracane są odpowiednio do wprowadzanych danych.
