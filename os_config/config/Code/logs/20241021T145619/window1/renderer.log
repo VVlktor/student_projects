@@ -1,0 +1,7 @@
+2024-10-21 14:56:21.968 [info] Started local extension host with pid 4446.
+2024-10-21 14:56:22.334 [info] Started initializing default profile extensions in extensions installation folder. file:///home/uczen/.vscode/extensions
+2024-10-21 14:56:24.142 [warning] Failed to create default profile extensions manifest in extensions installation folder. file:///home/uczen/.vscode/extensions Unable to create file 'vscode-userdata:/home/uczen/.vscode/extensions/extensions.json' that already exists when overwrite flag is not set
+2024-10-21 14:56:24.144 [info] Completed initializing default profile extensions in extensions installation folder. file:///home/uczen/.vscode/extensions
+2024-10-21 14:56:29.294 [info] [perf] Render performance baseline is 75ms
+2024-10-21 14:56:54.504 [error] [network] #6: https://marketplace.visualstudio.com/_apis/public/gallery/extensionquery - error POST Canceled
+2024-10-21 14:58:49.572 [error] [network] #20: https://marketplace.visualstudio.com/_apis/public/gallery/extensionquery - error POST Canceled

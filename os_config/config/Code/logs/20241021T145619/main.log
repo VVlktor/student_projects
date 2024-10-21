@@ -1,0 +1,6 @@
+2024-10-21 14:56:19.954 [info] update#setState idle
+2024-10-21 14:56:37.927 [error] Blocked vscode-webview request vscode-webview://0evud3gr83gpnjglqag9mjkqnor3u3ngbp2fkqtldn0fa6v5okfu/index.html?id=a41e1aab-0d35-4bf4-8cbc-e7bbd8e1bccf&origin=a41e1aab-0d35-4bf4-8cbc-e7bbd8e1bccf&swVersion=4&extensionId=&platform=electron&vscode-resource-base-authority=vscode-resource.vscode-cdn.net&parentOrigin=vscode-file%3A%2F%2Fvscode-app
+2024-10-21 14:56:49.985 [info] update#setState checking for updates
+2024-10-21 14:56:50.028 [info] update#setState idle
+2024-10-21 15:06:53.186 [info] Extension host with pid 4446 exited with code: 0, signal: unknown.
+2024-10-21 15:06:53.444 [error] [UtilityProcessWorker]: terminated unexpectedly with code 1905248112, signal: unknown
