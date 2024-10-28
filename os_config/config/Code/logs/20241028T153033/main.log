@@ -1,3 +1,15 @@
 2024-10-28 15:30:34.365 [info] update#setState idle
 2024-10-28 15:31:04.214 [info] update#setState checking for updates
 2024-10-28 15:31:04.266 [info] update#setState idle
+2024-10-28 16:20:07.237 [info] Extension host with pid 2081 exited with code: 0, signal: unknown.
+2024-10-28 16:20:07.378 [error] [UtilityProcessWorker]: terminated unexpectedly with code 18446744072847145000, signal: unknown
+2024-10-28 16:20:07.389 [error] [storage state.vscdb] backup(): Error: ENOENT: no such file or directory, stat '/home/uczen/.config/Code/User/globalStorage/state.vscdb'
+2024-10-28 16:20:07.395 [error] [storage state.vscdb] prepare(): Error: SQLITE_READONLY_DBMOVED: attempt to write a readonly database (INSERT INTO ItemTable VALUES (?,?),(?,?),(?,?)). Details: Keys: __$__targetStorageMarker, lifecyle.lastShutdownReason, codelens/cache2 Length: 1377
+2024-10-28 16:20:07.397 [error] Error: ENOENT: no such file or directory, unlink '/home/uczen/.config/Code/User/workspaceStorage/1730129434759/state.vscdb'
+    at async Object.unlink (node:internal/original-fs/promises:1077:10)
+    at async zm.y (file:///usr/share/code/resources/app/out/vs/code/electron-main/main.js:38:39699)
+    at async ac.w (file:///usr/share/code/resources/app/out/vs/code/electron-main/main.js:38:62137)
+    at async ac.close (file:///usr/share/code/resources/app/out/vs/code/electron-main/main.js:38:61561)
+    at async Promise.all (index 2)
+    at async Object.e [as settled] (file:///usr/share/code/resources/app/out/vs/code/electron-main/main.js:30:106929)
+    at async file:///usr/share/code/resources/app/out/vs/code/electron-main/main.js:38:34168
