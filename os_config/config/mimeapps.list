@@ -1,0 +1,5 @@
+[Default Applications]
+text/x-c++src=code.desktop
+
+[Added Associations]
+text/x-c++src=code.desktop;
