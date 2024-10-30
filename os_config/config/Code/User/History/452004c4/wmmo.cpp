@@ -2,32 +2,34 @@
 
 using namespace std;
 
-int main(){
-	WyliczSchody();
-	return 0;
-}
 
 void WyliczSchody(){
-	double wysokoscKlatki=400;
-	double szerokoscKlatki=750;
+	double wysokoscKlatki=320;
+	double szerokoscKlatki=590;
 	double obecnaWysokoscSchoda=15;
 	double obecnaSzerokoscSchoda=29;
 	bool czyWyliczone=false;
-	while(czyWyliczone){
+	while(true){
 		double ileStopni = szerokoscKlatki/obecnaSzerokoscSchoda;
-		if(ileStopni%1==0){
+		if(ileStopni-(int)ileStopni<0.1){
 			double jakWysokie = wysokoscKlatki/ileStopni;
-			if(jakWysokie<=32){
+			if(jakWysokie<=17){
 				cout << "Ilosc stopni: " << ileStopni << ", wysokosc: " << obecnaWysokoscSchoda << ", szerokosc" << obecnaSzerokoscSchoda << endl;
+				break;
 			}
 		}
 		else{
-			obecnaSzerokoscSchoda+=0.1;
-			obecnaWysokoscSchoda+=0.1
+			obecnaSzerokoscSchoda+=0.001;
+			obecnaWysokoscSchoda+=0.001;
 			if(obecnaSzerokoscSchoda>32 || obecnaWysokoscSchoda>17){
 				cout << "Nie mozna wyliczyc z takimi parametrami" << endl;
 				break;
 			}
 		}
 	}
+}
+
+int main(){
+	WyliczSchody();
+	return 0;
 }

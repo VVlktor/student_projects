@@ -3,7 +3,7 @@
     "profileAssociations": {
         "workspaces": {},
         "emptyWindows": {
-            "1730129434759": "__default__profile__"
+            "1730275458879": "__default__profile__"
         }
     },
     "profileAssociationsMigration": true,
@@ -15,7 +15,7 @@
         "folders": [],
         "emptyWindows": [
             {
-                "backupFolder": "1730129434759"
+                "backupFolder": "1730275458879"
             }
         ]
     },
@@ -74,6 +74,17 @@
                                 },
                                 {
                                     "id": "vscode.menubar.separator"
+                                },
+                                {
+                                    "id": "openRecentFile",
+                                    "uri": {
+                                        "$mid": 1,
+                                        "external": "file:///home/uczen/student_projects/cpp/Schody/LiczenieSchodow.cpp",
+                                        "path": "/home/uczen/student_projects/cpp/Schody/LiczenieSchodow.cpp",
+                                        "scheme": "file"
+                                    },
+                                    "enabled": true,
+                                    "label": "~/student_projects/cpp/Schody/LiczenieSchodow.cpp"
                                 },
                                 {
                                     "id": "openRecentFile",
@@ -1701,7 +1712,7 @@
     },
     "windowsState": {
         "lastActiveWindow": {
-            "backupPath": "/home/uczen/.config/Code/Backups/1730129434759",
+            "backupPath": "/home/uczen/.config/Code/Backups/1730275458879",
             "uiState": {
                 "mode": 0,
                 "x": 0,
