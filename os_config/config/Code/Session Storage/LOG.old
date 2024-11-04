@@ -1,2 +1,5 @@
-2024/10/21-15:06:53.390 10f8 Creating DB /home/uczen/.config/Code/Session Storage since it was missing.
-2024/10/21-15:06:53.413 10f8 Delete type=3 #1
+2024/10/30-09:25:13.330 73c Recovering log #3
+2024/10/30-09:25:13.335 73c Level-0 table #5: started
+2024/10/30-09:25:13.338 73c Level-0 table #5: 141 bytes OK
+2024/10/30-09:25:13.343 73c Delete type=0 #3
+2024/10/30-09:25:13.343 73c Delete type=3 #2

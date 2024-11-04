@@ -1,0 +1,7 @@
+2024-11-04 14:49:14.993 [info] update#setState idle
+2024-11-04 14:49:44.822 [info] update#setState checking for updates
+2024-11-04 14:49:44.859 [info] update#setState available for download
+2024-11-04 14:49:49.037 [error] CodeWindow: failed to load (reason: <unknown>, code: -3)
+2024-11-04 15:06:56.997 [info] Extension host with pid 1694 exited with code: 0, signal: unknown.
+2024-11-04 15:06:57.237 [error] [UtilityProcessWorker]: terminated unexpectedly with code 18446744073609222000, signal: unknown
+2024-11-04 15:08:53.218 [info] Extension host with pid 2914 exited with code: 0, signal: unknown.

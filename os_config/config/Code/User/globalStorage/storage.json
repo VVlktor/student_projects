@@ -1,7 +1,9 @@
 {
     "userDataProfilesMigration": true,
     "profileAssociations": {
-        "workspaces": {},
+        "workspaces": {
+            "file:///home/uczen/student_projects/cpp/Schody": "__default__profile__"
+        },
         "emptyWindows": {
             "1730275458879": "__default__profile__"
         }
@@ -12,7 +14,11 @@
     "telemetry.devDeviceId": "0cb62066-7969-4109-8081-c11f7219310a",
     "backupWorkspaces": {
         "workspaces": [],
-        "folders": [],
+        "folders": [
+            {
+                "folderUri": "file:///home/uczen/student_projects/cpp/Schody"
+            }
+        ],
         "emptyWindows": [
             {
                 "backupFolder": "1730275458879"
@@ -71,6 +77,20 @@
                                     "id": "workbench.action.reopenClosedEditor",
                                     "label": "&&Reopen Closed Editor",
                                     "enabled": false
+                                },
+                                {
+                                    "id": "vscode.menubar.separator"
+                                },
+                                {
+                                    "id": "openRecentFolder",
+                                    "uri": {
+                                        "$mid": 1,
+                                        "external": "file:///home/uczen/student_projects/cpp/Schody",
+                                        "path": "/home/uczen/student_projects/cpp/Schody",
+                                        "scheme": "file"
+                                    },
+                                    "enabled": true,
+                                    "label": "~/student_projects/cpp/Schody"
                                 },
                                 {
                                     "id": "vscode.menubar.separator"
@@ -243,6 +263,10 @@
                     {
                         "id": "workbench.action.closeActiveEditor",
                         "label": "&&Close Editor"
+                    },
+                    {
+                        "id": "workbench.action.closeFolder",
+                        "label": "Close &&Folder"
                     },
                     {
                         "id": "workbench.action.closeWindow",
@@ -438,7 +462,8 @@
                                 },
                                 {
                                     "id": "workbench.action.toggleSidebarVisibility",
-                                    "label": "&&Primary Side Bar"
+                                    "label": "&&Primary Side Bar",
+                                    "checked": true
                                 },
                                 {
                                     "id": "workbench.action.toggleAuxiliaryBar",
@@ -775,7 +800,8 @@
                     },
                     {
                         "id": "workbench.action.navigateToLastEditLocation",
-                        "label": "&&Last Edit Location"
+                        "label": "&&Last Edit Location",
+                        "enabled": false
                     },
                     {
                         "id": "vscode.menubar.separator"
@@ -1297,6 +1323,11 @@
                 "label": "Ctrl+W",
                 "userSettingsLabel": "ctrl+w"
             },
+            "workbench.action.closeFolder": {
+                "label": "Ctrl+K F",
+                "isNative": false,
+                "userSettingsLabel": "ctrl+k f"
+            },
             "workbench.action.closeWindow": {
                 "label": "Alt+F4",
                 "userSettingsLabel": "alt+f4"
@@ -1682,37 +1713,38 @@
         }
     },
     "theme": "vs-dark",
-    "themeBackground": "#1f1f1f",
+    "themeBackground": "#151515",
     "windowSplash": {
         "zoomLevel": 0,
         "baseTheme": "vs-dark",
         "colorInfo": {
-            "foreground": "#cccccc",
-            "background": "#1f1f1f",
-            "editorBackground": "#1f1f1f",
-            "titleBarBackground": "#181818",
-            "titleBarBorder": "#2b2b2b",
-            "activityBarBackground": "#181818",
-            "activityBarBorder": "#2b2b2b",
-            "sideBarBackground": "#181818",
-            "sideBarBorder": "#2b2b2b",
-            "statusBarBackground": "#181818",
-            "statusBarBorder": "#2b2b2b",
-            "statusBarNoFolderBackground": "#1f1f1f"
+            "foreground": "#bbbbbb",
+            "background": "#151515",
+            "editorBackground": "#151515",
+            "titleBarBackground": "#1a1a1a",
+            "titleBarBorder": "#272626",
+            "activityBarBackground": "#1d1d1d",
+            "activityBarBorder": "#272626",
+            "sideBarBackground": "#151515",
+            "sideBarBorder": "#272626",
+            "statusBarBackground": "#d2824e",
+            "statusBarBorder": "#272626",
+            "statusBarNoFolderBackground": "#d2824e"
         },
         "layoutInfo": {
             "sideBarSide": "left",
             "editorPartMinWidth": 220,
             "titleBarHeight": 0,
             "activityBarWidth": 48,
-            "sideBarWidth": 0,
+            "sideBarWidth": 256,
             "statusBarHeight": 22,
             "windowBorder": false
         }
     },
     "windowsState": {
         "lastActiveWindow": {
-            "backupPath": "/home/uczen/.config/Code/Backups/1730275458879",
+            "folder": "file:///home/uczen/student_projects/cpp/Schody",
+            "backupPath": "/home/uczen/.config/Code/Backups/0b2b1c61c57e146d5283f4e6996fb4e8",
             "uiState": {
                 "mode": 0,
                 "x": 0,
