@@ -2,11 +2,10 @@
     "userDataProfilesMigration": true,
     "profileAssociations": {
         "workspaces": {
-            "file:///home/uczen/student_projects/cpp/Schody": "__default__profile__"
+            "file:///home/uczen/student_projects/cpp/Schody": "__default__profile__",
+            "file:///home/uczen/student_projects/cpp/SchodyZTestami": "__default__profile__"
         },
-        "emptyWindows": {
-            "1730275458879": "__default__profile__"
-        }
+        "emptyWindows": {}
     },
     "profileAssociationsMigration": true,
     "telemetry.sqmId": "",
@@ -17,13 +16,12 @@
         "folders": [
             {
                 "folderUri": "file:///home/uczen/student_projects/cpp/Schody"
+            },
+            {
+                "folderUri": "file:///home/uczen/student_projects/cpp/SchodyZTestami"
             }
         ],
-        "emptyWindows": [
-            {
-                "backupFolder": "1730275458879"
-            }
-        ]
+        "emptyWindows": []
     },
     "lastKnownMenubarData": {
         "menus": {
@@ -75,11 +73,21 @@
                             "items": [
                                 {
                                     "id": "workbench.action.reopenClosedEditor",
-                                    "label": "&&Reopen Closed Editor",
-                                    "enabled": false
+                                    "label": "&&Reopen Closed Editor"
                                 },
                                 {
                                     "id": "vscode.menubar.separator"
+                                },
+                                {
+                                    "id": "openRecentFolder",
+                                    "uri": {
+                                        "$mid": 1,
+                                        "external": "file:///home/uczen/student_projects/cpp/SchodyZTestami",
+                                        "path": "/home/uczen/student_projects/cpp/SchodyZTestami",
+                                        "scheme": "file"
+                                    },
+                                    "enabled": true,
+                                    "label": "~/student_projects/cpp/SchodyZTestami"
                                 },
                                 {
                                     "id": "openRecentFolder",
@@ -94,6 +102,28 @@
                                 },
                                 {
                                     "id": "vscode.menubar.separator"
+                                },
+                                {
+                                    "id": "openRecentFile",
+                                    "uri": {
+                                        "$mid": 1,
+                                        "external": "file:///home/uczen/student_projects/cpp/SchodyZTestami/main_test.cpp",
+                                        "path": "/home/uczen/student_projects/cpp/SchodyZTestami/main_test.cpp",
+                                        "scheme": "file"
+                                    },
+                                    "enabled": true,
+                                    "label": "~/student_projects/cpp/SchodyZTestami/main_test.cpp"
+                                },
+                                {
+                                    "id": "openRecentFile",
+                                    "uri": {
+                                        "$mid": 1,
+                                        "external": "file:///home/uczen/student_projects/cpp/SchodyZTestami/functions.cpp",
+                                        "path": "/home/uczen/student_projects/cpp/SchodyZTestami/functions.cpp",
+                                        "scheme": "file"
+                                    },
+                                    "enabled": true,
+                                    "label": "~/student_projects/cpp/SchodyZTestami/functions.cpp"
                                 },
                                 {
                                     "id": "openRecentFile",
@@ -800,8 +830,7 @@
                     },
                     {
                         "id": "workbench.action.navigateToLastEditLocation",
-                        "label": "&&Last Edit Location",
-                        "enabled": false
+                        "label": "&&Last Edit Location"
                     },
                     {
                         "id": "vscode.menubar.separator"
@@ -1743,8 +1772,8 @@
     },
     "windowsState": {
         "lastActiveWindow": {
-            "folder": "file:///home/uczen/student_projects/cpp/Schody",
-            "backupPath": "/home/uczen/.config/Code/Backups/0b2b1c61c57e146d5283f4e6996fb4e8",
+            "folder": "file:///home/uczen/student_projects/cpp/SchodyZTestami",
+            "backupPath": "/home/uczen/.config/Code/Backups/1b6202abf1a359c7ecd2db915089c067",
             "uiState": {
                 "mode": 0,
                 "x": 0,

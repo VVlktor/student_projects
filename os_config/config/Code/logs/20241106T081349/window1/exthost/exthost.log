@@ -1,0 +1,12 @@
+2024-11-06 08:13:55.532 [info] Extension host with pid 1468 started
+2024-11-06 08:13:55.532 [info] Skipping acquiring lock for /home/uczen/.config/Code/User/workspaceStorage/b5ec045e6d8d90a0bcfb7c41b1ec865b.
+2024-11-06 08:13:55.954 [info] ExtensionService#_doActivateExtension vscode.emmet, startup: false, activationEvent: 'onLanguage'
+2024-11-06 08:13:56.471 [info] ExtensionService#_doActivateExtension vscode.git-base, startup: true, activationEvent: '*', root cause: vscode.git
+2024-11-06 08:13:57.483 [info] ExtensionService#_doActivateExtension vscode.git, startup: true, activationEvent: '*'
+2024-11-06 08:13:57.915 [info] ExtensionService#_doActivateExtension vscode.github, startup: true, activationEvent: '*'
+2024-11-06 08:13:58.780 [info] Eager extensions activated
+2024-11-06 08:13:59.140 [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch, startup: false, activationEvent: 'onStartupFinished'
+2024-11-06 08:13:59.143 [info] ExtensionService#_doActivateExtension vscode.merge-conflict, startup: false, activationEvent: 'onStartupFinished'
+2024-11-06 08:13:59.198 [info] ExtensionService#_doActivateExtension unthrottled.doki-theme, startup: false, activationEvent: 'onStartupFinished'
+2024-11-06 09:00:25.778 [info] Extension host terminating: renderer closed the MessagePort
+2024-11-06 09:00:25.832 [info] Extension host with pid 1468 exiting with code 0
