@@ -1,9 +1,11 @@
 #include <iostream>
 #include "funkcje.cpp"
+#include "SchodyClass.cpp"
 
 using namespace std;
 
 int main() {
-    cout << WyliczSchody(360, 600);
+    Schody schodki = Schody();
+    schody = ObliczSchody(320,590);
 }
 
