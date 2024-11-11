@@ -1,21 +1,27 @@
 #include <iostream>
+#include "SchodyClass.cpp"
 
 using namespace std;
 
-string WyliczSchody(double wysokoscKlatki, double szerokoscKlatki){
-	double obecnaWysokoscSchoda=14;
-	double obecnaSzerokoscSchoda=25;
-	while(obecnaWysokoscSchoda<=32 && obecnaWysokoscSchoda<=19){
-		int ileStopni = (int)(szerokoscKlatki/obecnaSzerokoscSchoda);
-        double jakWysokie = wysokoscKlatki/ileStopni;
-        if(jakWysokie<=19 && jakWysokie*ileStopni>wysokoscKlatki+10 && jakWysokie*ileStopni<wysokoscKlatki-10){
-            string wynik = to_string(ileStopni) + "|" + to_string(obecnaWysokoscSchoda) + "|" + to_string(obecnaSzerokoscSchoda);//do zmienienia, tylko na moment, nie ma opcji zeby zwracac stringa do testow XD
-            return wynik;
+Schody ObliczSchody(double H_klatki, double L_klatki) {
+    Schody schody = Schody();
+    double min_H_Stopnia = 15.0;
+    double max_H_Stopnia = 19.0;
+    double min_L_Stopnia = 29.0;
+    double max_L_Stopnia = 32.0;
+    for (int liczbaStopni = ceil(H_klatki / max_H_Stopnia); liczbaStopni <= floor(H_klatki / min_H_Stopnia); liczbaStopni++) {
+        double wysokoscStopnia = H_klatki / liczbaStopni;
+        if (!(wysokoscStopnia < min_H_Stopnia || wysokoscStopnia > max_H_Stopnia)) {
+            for (double szerokoscStopnia = min_L_Stopnia; szerokoscStopnia <= max_L_Stopnia; szerokoscStopnia += 0.5) {
+                if (szerokoscStopnia * liczbaStopni <= L_klatki) {
+                    schody.liczbaSchodow = liczbaStopni;
+                    schody.wysokoscSchoda = wysokoscStopnia;
+                    schody.szerokoscSchoda = szerokoscStopnia;
+                    schody.czyWyliczone = true;
+                    return schody;
+                }
+            }
         }
-        else{
-            obecnaSzerokoscSchoda+=0.001;
-            obecnaWysokoscSchoda+=0.001;
-        }
-	}
-    return "Nie mozna miec schodow, zrob sobie winde";
+    }
+    return schody;
 }
