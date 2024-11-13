@@ -2,10 +2,10 @@
 
 ## 1. Cel zadania:
 
-Program obliczyc ma ilość schodów oraz wysokość i szerokość pojedynczego stopnia. Wymiary klatki schodowej podawane są przez użytkownika.<br>
+Program ma obliczyć ilość schodów oraz wysokość i szerokość pojedynczego stopnia. Wymiary klatki schodowej podawane są przez użytkownika.<br>
 ### Wymiary schodów określone były w pewnych granicach:
 
-| Wymóg | Liczba |
+| Wymóg | Liczba podana w cm |
 | ---- | ---- |
 | Minimalna szerokość stopnia | 29 |
 | Maksymalna szerokość stopnia | 32 |
@@ -71,6 +71,7 @@ Funkcja oblicza najmniejszą możliwą liczbę stopni, po czym iteruje aż do ma
 ## 4. Testy:
 Przeprowadzono testy funkcji ObliczSchody.
 
+### Testy ilości schodów:
 | Wprowadzona wysokość klatki | Wprowadzona szerokość klatki | Oczekiwana liczba stopni | Zwrócona liczba stopni |
 | ---- | ---- | ---- | ---- |
 | 320 | 590 | 17 | 17 |
@@ -78,12 +79,28 @@ Przeprowadzono testy funkcji ObliczSchody.
 | 213 | 511 | 12 | 12 |
 | 1000 | 200 | Brak wyniku, dane niepoprawne | Brak wyniku, dane niepoprawne |
 
-Test:
 ```cpp
 TEST(mojagrupatestow, test1) {
     double wysokoscKlatki = 320;
     double szerokoscKlatki = 590;
     Schody wynik = ObliczSchody(wysokoscKlatki, szerokoscKlatki);
     EXPECT_EQ(wynik.liczbaSchodow, 17);
+}
+```
+
+
+### Testy wysokości schodów:
+| Wprowadzona wysokość klatki | Wprowadzona szerokość klatki | Oczekiwana wysokość stopna | Zwrócona wysokość stopnia |
+| ---- | ---- | ---- | ---- |
+| 380 | 590 | 19 | 19 |
+| 750 | 1300 | 18.75 | 18.75 |
+| 210 | 400 | 17.5 | 17.5 |
+
+```cpp
+TEST(testyWysokosci, test4){
+    double wysokoscKlatki = 380;
+    double szerokoscKlatki = 590;
+    Schody wynik = ObliczSchody(wysokoscKlatki, szerokoscKlatki);
+    EXPECT_EQ(wynik.wysokoscSchoda, 19);
 }
 ```
