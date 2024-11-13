@@ -37,8 +37,9 @@ public:
         }
     }
 };
-3.
 ```
+
+
 
 ## 3. Działanie funkcji ObliczSchody:
 Funkcja ObliczSchody przymuje wysokość klatki oraz jej szerokość. Jako wynik zwraca klasę Schody.
@@ -58,7 +59,6 @@ Schody ObliczSchody(double H_klatki, double L_klatki) {
                     schody.wysokoscSchoda = wysokoscStopnia;
                     schody.szerokoscSchoda = szerokoscStopnia;
                     schody.czyWyliczone = true;
-                    return schody;
                 }
             }
         }
@@ -66,12 +66,12 @@ Schody ObliczSchody(double H_klatki, double L_klatki) {
     return schody;
 }
 ```
-Funkcja oblicza najmniejszą możliwą liczbę stopni, po czym iteruje aż do maksymalnej liczby stopni. W każdej iteracji sprawdza, czy dana liczba stopni zmieści się w wymaganych wymiarach, po czym szuka odpowiedniej szerokości stopnia. Po znalezieniu zwraca Schody, w przeciwnym wypadku iteruje przez pierwszą pętle.<br>
+Funkcja oblicza najmniejszą możliwą liczbę stopni, po czym iteruje aż do maksymalnej liczby stopni. W każdej iteracji sprawdza, czy dana liczba stopni zmieści się w wymaganych wymiarach, po czym szuka odpowiedniej szerokości stopnia. Iteruje przez wszystkie przypdaki nawet po znalezieniu możliwego rozwiązania, co gwarantuje najbardziej optymalny stosunek wysokości do szerokości, oraz większe przywiązanie do wymogu wysokości.<br>
 
 ## 4. Testy:
 Przeprowadzono testy funkcji ObliczSchody.
 
-### Testy ilości schodów:
+### 4.1 Testy ilości schodów:
 | Wprowadzona wysokość klatki | Wprowadzona szerokość klatki | Oczekiwana liczba stopni | Zwrócona liczba stopni |
 | ---- | ---- | ---- | ---- |
 | 320 | 590 | 17 | 17 |
@@ -89,7 +89,7 @@ TEST(mojagrupatestow, test1) {
 ```
 
 
-### Testy wysokości schodów:
+### 4.2 Testy wysokości schodów:
 | Wprowadzona wysokość klatki | Wprowadzona szerokość klatki | Oczekiwana wysokość stopna | Zwrócona wysokość stopnia |
 | ---- | ---- | ---- | ---- |
 | 380 | 590 | 19 | 19 |
