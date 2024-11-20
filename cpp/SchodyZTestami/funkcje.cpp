@@ -18,7 +18,6 @@ Schody ObliczSchody(double H_klatki, double L_klatki) {
                     schody.wysokoscSchoda = wysokoscStopnia;
                     schody.szerokoscSchoda = szerokoscStopnia;
                     schody.czyWyliczone = true;
-                    return schody;
                 }
             }
         }
