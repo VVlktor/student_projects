@@ -74,9 +74,9 @@ Przeprowadzono testy funkcji ObliczSchody.
 ### 4.1 Testy ilości schodów:
 | Wprowadzona wysokość klatki | Wprowadzona szerokość klatki | Oczekiwana liczba stopni | Zwrócona liczba stopni |
 | ---- | ---- | ---- | ---- |
-| 320 | 590 | 17 | 17 |
-| 700 | 1300 | 37 | 37 |
-| 213 | 511 | 12 | 12 |
+| 320 | 590 | 20 | 20 |
+| 700 | 1300 | 44 | 44 |
+| 213 | 511 | 14 | 14 |
 | 1000 | 200 | Brak wyniku, dane niepoprawne | Brak wyniku, dane niepoprawne |
 
 ```cpp
@@ -93,8 +93,8 @@ TEST(mojagrupatestow, test1) {
 | Wprowadzona wysokość klatki | Wprowadzona szerokość klatki | Oczekiwana wysokość stopna | Zwrócona wysokość stopnia |
 | ---- | ---- | ---- | ---- |
 | 380 | 590 | 19 | 19 |
-| 750 | 1300 | 18.75 | 18.75 |
-| 210 | 400 | 17.5 | 17.5 |
+| 750 | 1500 | 15 | 15 |
+| 210 | 410 | 15 | 15 |
 
 ```cpp
 TEST(testyWysokosci, test4){
