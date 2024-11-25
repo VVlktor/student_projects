@@ -72,35 +72,36 @@ Funkcja oblicza najmniejszą możliwą liczbę stopni, po czym iteruje aż do ma
 Przeprowadzono testy funkcji ObliczSchody.
 
 ### 4.1 Testy ilości schodów:
-| Wprowadzona wysokość klatki | Wprowadzona szerokość klatki | Oczekiwana liczba stopni | Zwrócona liczba stopni |
-| ---- | ---- | ---- | ---- |
-| 320 | 590 | 20 | 20 |
-| 700 | 1300 | 44 | 44 |
-| 213 | 511 | 14 | 14 |
-| 1000 | 200 | Brak wyniku, dane niepoprawne | Brak wyniku, dane niepoprawne |
+| Wprowadzona wysokość klatki | Wprowadzona szerokość klatki | Oczekiwana liczba stopni | Zwrócona liczba stopni | Oczekiwana wysokość | Zwrócona wysokość | Oczekiwana szerokość | Zwrócona szerokość |
+| ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- |
+| 320 | 580 | 20 | 20 | 16 | 16 | 29 | 29 |
+| 700 | 1300 | 44 | 44 | 15.91 | 15.91 | 29.50 | 29.50 | 
+| 210 | 407 | 14 | 14 | 15 | 15 | 29 | 29 |
 
 ```cpp
-TEST(mojagrupatestow, test1) {
+TEST(testyLiczb, test1) {
     double wysokoscKlatki = 320;
-    double szerokoscKlatki = 590;
+    double szerokoscKlatki = 580;
     Schody wynik = ObliczSchody(wysokoscKlatki, szerokoscKlatki);
-    EXPECT_EQ(wynik.liczbaSchodow, 17);
+    EXPECT_EQ(wynik.liczbaSchodow, 20);
+    EXPECT_EQ(wynik.wysokoscSchoda, 16);
+    EXPECT_EQ(wynik.szerokoscSchoda, 29);
 }
 ```
 
 
-### 4.2 Testy wysokości schodów:
-| Wprowadzona wysokość klatki | Wprowadzona szerokość klatki | Oczekiwana wysokość stopna | Zwrócona wysokość stopnia |
+### 4.2 Testy możliwości wykonania schodów:
+| Wprowadzona wysokość klatki | Wprowadzona szerokość klatki | Oczekiwany rezultat | Zwrócony rezultat |
 | ---- | ---- | ---- | ---- |
-| 380 | 590 | 19 | 19 |
-| 750 | 1500 | 15 | 15 |
-| 210 | 410 | 15 | 15 |
+| 180 | 200 | false | false |
+| 750 | 1300 | true | true |
+| 210 | 400 | true | true |
 
 ```cpp
 TEST(testyWysokosci, test4){
-    double wysokoscKlatki = 380;
-    double szerokoscKlatki = 590;
+    double wysokoscKlatki = 180;
+    double szerokoscKlatki = 200;
     Schody wynik = ObliczSchody(wysokoscKlatki, szerokoscKlatki);
-    EXPECT_EQ(wynik.wysokoscSchoda, 19);
+    EXPECT_EQ(wynik.czyWyliczone, false);
 }
 ```
