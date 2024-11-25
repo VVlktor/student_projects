@@ -105,5 +105,81 @@ TEST(testyWysokosci, test4){
     EXPECT_EQ(wynik.czyWyliczone, false);
 }
 ```
-## 5. Podsumowanie:
+## 5. Aplikacja desktopowa:
+Aplikacja desktopowa wykonana została w .NET MAUI.
+### 5.1 Klasa Schody w aplikacji MAUI:
+```cs
+public class Stairs
+{
+    public Stairs(double H_klatki, double L_klatki)
+    {
+        czyWyliczone = false;
+        for (int liczbaStopni = (int)Math.Ceiling(H_klatki / max_H_Stopnia); liczbaStopni <= Math.Floor(H_klatki / min_H_Stopnia); liczbaStopni++)
+        {
+            double wysokoscStopnia = H_klatki / liczbaStopni;
+            if (!(wysokoscStopnia < min_H_Stopnia || wysokoscStopnia > max_H_Stopnia))
+            {
+                for (double szerokoscStopnia = min_L_Stopnia; szerokoscStopnia <= max_L_Stopnia; szerokoscStopnia += 0.1)
+                {
+                    if (szerokoscStopnia * liczbaStopni <= L_klatki)
+                    {
+                        liczbaSchodow = liczbaStopni;
+                        wysokoscSchoda = wysokoscStopnia;
+                        szerokoscSchoda = szerokoscStopnia;
+                        czyWyliczone = true;
+                    }
+                }
+            }
+        }
+    }
+
+    public double min_H_Stopnia = 15.0;
+    public double max_H_Stopnia = 19.0;
+    public double min_L_Stopnia = 29.0;
+    public double max_L_Stopnia = 32.0;
+
+    public double wysokoscSchoda { get; set; }
+    public double szerokoscSchoda { get; set; }
+    public int liczbaSchodow { get; set; }
+    public bool czyWyliczone { get; set; }
+
+    public Stairs()
+    {
+        czyWyliczone = false;
+    }
+
+    public void Wypisz()
+    {
+        if (czyWyliczone)
+            Console.WriteLine("Liczba stopni: " + liczbaSchodow + "\nWysokosc stopnia: " + wysokoscSchoda + "\nSzerokosc stopnia: " + szerokoscSchoda);
+        else
+            Console.WriteLine("Nie udalo sie wyliczyc schodow");
+    }
+}
+```
+Konstruktor przyjmuje parametry z których obliczane są wymiary schodów.
+### 5.2 Wyświetlanie interfejsu:
+Aplikacja posiada interfejs pozwalający na przymowanie danych od użytkownika oraz wypisanie wymiarów obliczonych schodów.
+![image](https://github.com/user-attachments/assets/439475e9-3bdc-4367-b99f-45b6a5279aff)
+
+### 5.3 Obsługa danych podanych przez użytkownika:
+```cs
+private async void ObliczSchodki(object sender, EventArgs e)
+{
+    int szerokosc = int.Parse(SzerScho.Text);
+    int wysokosc = int.Parse(WysScho.Text);
+    Stairs stairs = new Stairs(wysokosc, szerokosc);
+    if (stairs.czyWyliczone)
+        WynikSchodow.Text = $"Liczba schodów: {stairs.liczbaSchodow}\nWysokosc stopnia: {stairs.wysokoscSchoda.ToString("F")}\nSzerokosc stopnia: {stairs.szerokoscSchoda.ToString("F")}";
+    else
+        WynikSchodow.Text = "Nie mozna wyliczyc schodow. Polecam winde :)";
+    while (true)
+    {
+        Chleb.Rotation += 3;
+        await Task.Delay(10);
+    }
+}
+```
+
+## 6. Podsumowanie:
 Program spełnia swoje założenia. Schody są liczone gdy wysokość i szerokość klatki pozawalają na wyliczenie rozmiarów schodów zgodnie z założonymi minimalnymi i maksyamlnymi  wymiarami.
