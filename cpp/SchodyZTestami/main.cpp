@@ -5,7 +5,12 @@
 using namespace std;
 
 int main() {
+    double H_klatki, L_klatki;
+    cout << "Podaj wysokosc klatki: ";
+    cin >> H_klatki;
+    cout << "Podaj szerokosc klatki: ";
+    cin >> L_klatki;
     Schody schodki = Schody();
-    schody = ObliczSchody(320,590);
+    schodki = schodki.ObliczSchody(H_klatki, L_klatki);
+    Wypisz(schodki);
 }
-
