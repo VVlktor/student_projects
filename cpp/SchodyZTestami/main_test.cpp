@@ -13,12 +13,12 @@ TEST(testyLiczb, test1) {
 }
 
 TEST(testyLiczb, test2) {
-    double wysokoscKlatki = 731;
-    double szerokoscKlatki = 1250;
+    double wysokoscKlatki = 700;
+    double szerokoscKlatki = 1300;
     Schody wynik = ObliczSchody(wysokoscKlatki, szerokoscKlatki);
-    EXPECT_EQ(wynik.liczbaSchodow, 43);
-    EXPECT_EQ(wynik.wysokoscSchoda, 17);
-    EXPECT_EQ(wynik.szerokoscSchoda, 29);
+    EXPECT_EQ(wynik.liczbaSchodow, 44);
+    EXPECT_EQ(wynik.wysokoscSchoda, 15.91);
+    EXPECT_EQ(wynik.szerokoscSchoda, 29.50);
 }
 
 TEST(testyLiczb, test3) {
