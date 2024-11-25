@@ -105,3 +105,5 @@ TEST(testyWysokosci, test4){
     EXPECT_EQ(wynik.czyWyliczone, false);
 }
 ```
+## 5. Podsumowanie:
+Program spełnia swoje założenia. Schody są liczone gdy wysokość i szerokość klatki pozawalają na wyliczenie rozmiarów schodów zgodnie z założonymi minimalnymi i maksyamlnymi  wymiarami.
