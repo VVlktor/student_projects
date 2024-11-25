@@ -148,12 +148,12 @@ public class Stairs
         czyWyliczone = false;
     }
 
-    public void Wypisz()
+    public string Wypisz()
     {
         if (czyWyliczone)
-            Console.WriteLine("Liczba stopni: " + liczbaSchodow + "\nWysokosc stopnia: " + wysokoscSchoda + "\nSzerokosc stopnia: " + szerokoscSchoda);
+            return $"Liczba stopni: {liczbaSchodow}\nWysokosc stopnia: {wysokoscSchoda}\nSzerokosc stopnia: {szerokoscSchoda}";
         else
-            Console.WriteLine("Nie udalo sie wyliczyc schodow");
+            return "Nie udalo sie wyliczyc schodow";
     }
 }
 ```
@@ -169,10 +169,7 @@ private async void ObliczSchodki(object sender, EventArgs e)
     int szerokosc = int.Parse(SzerScho.Text);
     int wysokosc = int.Parse(WysScho.Text);
     Stairs stairs = new Stairs(wysokosc, szerokosc);
-    if (stairs.czyWyliczone)
-        WynikSchodow.Text = $"Liczba schodów: {stairs.liczbaSchodow}\nWysokosc stopnia: {stairs.wysokoscSchoda.ToString("F")}\nSzerokosc stopnia: {stairs.szerokoscSchoda.ToString("F")}";
-    else
-        WynikSchodow.Text = "Nie mozna wyliczyc schodow. Polecam winde :)";
+    WynikSchodow.Text = stairs.Wypisz();
     while (true)
     {
         Chleb.Rotation += 3;
