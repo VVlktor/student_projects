@@ -12,22 +12,22 @@ Program ma obliczyć ilość schodów oraz wysokość i szerokość pojedynczego
 | Minimalna wysokość stopnia | 15 |
 | Maksymalna wysokość stopnia | 19 |
 
-## 2. Klasa Schody:
-Stworzono klasę Schody w której zawarto obliczanie wymiarow i ilosci schodow:
+## 2. Klasa Stairs:
+Stworzono klasę Stairs w której zawarto obliczanie wymiarow i ilosci schodow:
 ```cpp
-class Schody {
+class Stairs {
 public:
     double wysokoscSchoda;
     double szerokoscSchoda;
     int liczbaSchodow;
     bool czyWyliczone;
 
-    Schody() {
+    Stairs() {
         czyWyliczone = false;
     }
 
-    Schody ObliczSchody(double H_klatki, double L_klatki) {
-        Schody schody = Schody();
+    Stairs ObliczSchody(double H_klatki, double L_klatki) {
+        Stairs schody = Stairs();
         double min_H_Stopnia = 15.0;
         double max_H_Stopnia = 19.0;
         double min_L_Stopnia = 29.0;
@@ -55,7 +55,7 @@ Funkcja ObliczSchody oblicza najmniejszą możliwą liczbę stopni, po czym iter
 
 
 ## 3. Działanie programu:
-### 3.1. Program tworzy klasę Schody po czym wyołuje ObliczSchody by obliczyć dane schodów.
+### 3.1. Program tworzy klasę Stairs po czym wyołuje ObliczSchody by obliczyć dane schodów.
 ```cpp
 int main() {
     double H_klatki, L_klatki;
@@ -63,14 +63,14 @@ int main() {
     cin >> H_klatki;
     cout << "Podaj szerokosc klatki: ";
     cin >> L_klatki;
-    Schody schodki = Schody();
+    Stairs schodki = Stairs();
     schodki = schodki.ObliczSchody(H_klatki, L_klatki);
     Wypisz(schodki);
 }
 ```
 ### 3.2. Program posiada funkcję Wypisz, która pozwala na wypisanie danych schodów.
 ```cpp
-void Wypisz(Schody stairs) {
+void Wypisz(Stairs stairs) {
     if (stairs.czyWyliczone) {
         cout << "Liczba stopni: " << stairs.liczbaSchodow << endl;
         cout << "Wysokosc stopnia: " << stairs.wysokoscSchoda << endl;
@@ -96,7 +96,8 @@ Przeprowadzono testy funkcji ObliczSchody.
 TEST(testyLiczb, test1) {
     double wysokoscKlatki = 320;
     double szerokoscKlatki = 580;
-    Schody wynik = ObliczSchody(wysokoscKlatki, szerokoscKlatki);
+    Stairs wynik = Stairs();
+    wynik = ObliczSchody(wysokoscKlatki, szerokoscKlatki);
     EXPECT_EQ(wynik.liczbaSchodow, 20);
     EXPECT_EQ(wynik.wysokoscSchoda, 16);
     EXPECT_EQ(wynik.szerokoscSchoda, 29);
@@ -115,19 +116,20 @@ TEST(testyLiczb, test1) {
 TEST(testyWysokosci, test4){
     double wysokoscKlatki = 180;
     double szerokoscKlatki = 200;
-    Schody wynik = ObliczSchody(wysokoscKlatki, szerokoscKlatki);
+    Schody wynik = Schody();
+    wynik = ObliczSchody(wysokoscKlatki, szerokoscKlatki);
     EXPECT_EQ(wynik.czyWyliczone, false);
 }
 ```
 ## 5. Aplikacja desktopowa:
 Aplikacja desktopowa wykonana została w .NET MAUI.
+
 ### 5.1 Klasa Schody w aplikacji MAUI:
 ```cs
 public class Stairs
 {
     public Stairs(double H_klatki, double L_klatki)
     {
-        czyWyliczone = false;
         for (int liczbaStopni = (int)Math.Ceiling(H_klatki / max_H_Stopnia); liczbaStopni <= Math.Floor(H_klatki / min_H_Stopnia); liczbaStopni++)
         {
             double wysokoscStopnia = H_klatki / liczbaStopni;
@@ -137,47 +139,46 @@ public class Stairs
                 {
                     if (szerokoscStopnia * liczbaStopni <= L_klatki)
                     {
-                        liczbaSchodow = liczbaStopni;
-                        wysokoscSchoda = wysokoscStopnia;
-                        szerokoscSchoda = szerokoscStopnia;
-                        czyWyliczone = true;
+                        stanSchodow = new ObliczoneSchody(wysokoscStopnia, szerokoscStopnia, liczbaStopni);
                     }
                 }
             }
         }
     }
 
-    public double min_H_Stopnia = 15.0;
-    public double max_H_Stopnia = 19.0;
-    public double min_L_Stopnia = 29.0;
-    public double max_L_Stopnia = 32.0;
+    public const double min_H_Stopnia = 15.0;
+    public const double max_H_Stopnia = 19.0;
+    public const double min_L_Stopnia = 29.0;
+    public const double max_L_Stopnia = 32.0;
 
-    public double wysokoscSchoda { get; set; }
-    public double szerokoscSchoda { get; set; }
-    public int liczbaSchodow { get; set; }
-    public bool czyWyliczone { get; set; }
-
-    public Stairs()
-    {
-        czyWyliczone = false;
-    }
+    public StanSchodow stanSchodow { get; set; } = new BrakSchodow();
 
     public string Wypisz()
     {
-        if (czyWyliczone)
-            return $"Liczba stopni: {liczbaSchodow}\nWysokosc stopnia: {wysokoscSchoda}\nSzerokosc stopnia: {szerokoscSchoda}";
+        if (stanSchodow is ObliczoneSchody)
+        {
+            var x = (ObliczoneSchody)stanSchodow;
+            return $"Liczba stopni: {x.liczbaSchodow}\nWysokosc stopnia: {x.wysokoscSchoda.ToString("F")}\nSzerokosc stopnia: {x.szerokoscSchoda.ToString("F")}";
+        }
         else
             return "Nie udalo sie wyliczyc schodow";
     }
 }
 ```
-Konstruktor przyjmuje parametry z których obliczane są wymiary schodów.
+Konstruktor przyjmuje parametry z których obliczane są wymiary schodów. Dane schodów przechowywane są w rekordzie StanSchodów, który może posiadać dane schodów jako ObliczoneSchody lub nie posiadać danych schodów w przypadku braku możliwości obliczenia ich jako BrakSchdów. Jest to możliwe dzięki abstrakcyjnemu rekordowi StanSchodów:
+
+```cs
+public abstract record StanSchodow();
+public record BrakSchodow() : StanSchodow;
+public record ObliczoneSchody(double wysokoscSchoda, double szerokoscSchoda, int liczbaSchodow) : StanSchodow;
+```
 
 ### 5.2 Wyświetlanie interfejsu użytkownika:
 Aplikacja posiada interfejs użytkownika pozwalający na przymowanie danych od użytkownika oraz wypisanie wymiarów obliczonych schodów.
 ![image](https://github.com/user-attachments/assets/439475e9-3bdc-4367-b99f-45b6a5279aff)
 
 ### 5.3 Obsługa danych podanych przez użytkownika:
+Aplikacja przyjmuje dane od użytkownika z pól po czym używa klasy Stairs
 ```cs
 private async void ObliczSchodki(object sender, EventArgs e)
 {
@@ -194,4 +195,4 @@ private async void ObliczSchodki(object sender, EventArgs e)
 ```
 
 ## 6. Podsumowanie:
-Program spełnia swoje założenia. Schody są liczone gdy wysokość i szerokość klatki pozawalają na wyliczenie rozmiarów schodów zgodnie z założonymi minimalnymi i maksyamlnymi  wymiarami.
+Program spełnia swoje założenia. Schody są liczone gdy wysokość i szerokość klatki pozawalają na wyliczenie rozmiarów schodów zgodnie z założonymi minimalnymi i maksyamlnymi wymiarami.
