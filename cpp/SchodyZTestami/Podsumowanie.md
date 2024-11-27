@@ -122,7 +122,7 @@ TEST(testyWysokosci, test4){
 }
 ```
 ## 5. Aplikacja desktopowa:
-Aplikacja desktopowa wykonana została w .NET MAUI.
+Aplikacja desktopowa wykonana została w technologi .NET MAUI w języku C#.
 
 ### 5.1 Klasa Schody w aplikacji MAUI:
 ```cs
