@@ -10,7 +10,7 @@ int main() {
     cin >> H_klatki;
     cout << "Podaj szerokosc klatki: ";
     cin >> L_klatki;
-    Schody schodki = Schody();
+    Staris schodki = Stairs();
     schodki = schodki.ObliczSchody(H_klatki, L_klatki);
     Wypisz(schodki);
 }
