@@ -13,7 +13,7 @@ Program ma obliczyć ilość schodów oraz wysokość i szerokość pojedynczego
 | Maksymalna wysokość stopnia | 19 |
 
 ## 2. Klasa Schody:
-Stworzono klasę Schody by móc zwórcić wynik jak klasę:
+Stworzono klasę Schody w której zawarto obliczanie wymiarow i ilosci schodow:
 ```cpp
 class Schody {
 public:
@@ -26,47 +26,61 @@ public:
         czyWyliczone = false;
     }
 
-    void Wypisz() {
-        if (czyWyliczone) {
-            cout << "Liczba stopni: " << liczbaSchodow << endl;
-            cout << "Wysokosc stopnia: " << wysokoscSchoda  << endl;
-            cout << "Szerokosc stopnia: " << szerokoscSchoda << endl << endl;
-        }
-        else {
-            cout << "Nie udalo sie wyliczyc schodow" << endl;
-        }
-    }
-};
-```
-
-
-
-## 3. Działanie funkcji ObliczSchody:
-Funkcja ObliczSchody przymuje wysokość klatki oraz jej szerokość. Jako wynik zwraca klasę Schody.
-```cpp
-Schody ObliczSchody(double H_klatki, double L_klatki) {
-    Schody schody = Schody();
-    double min_H_Stopnia = 15.0;
-    double max_H_Stopnia = 19.0;
-    double min_L_Stopnia = 29.0;
-    double max_L_Stopnia = 32.0;
-    for (int liczbaStopni = ceil(H_klatki / max_H_Stopnia); liczbaStopni <= floor(H_klatki / min_H_Stopnia); liczbaStopni++) {
-        double wysokoscStopnia = H_klatki / liczbaStopni;
-        if (!(wysokoscStopnia < min_H_Stopnia || wysokoscStopnia > max_H_Stopnia)) {
-            for (double szerokoscStopnia = min_L_Stopnia; szerokoscStopnia <= max_L_Stopnia; szerokoscStopnia += 0.1) {
-                if (szerokoscStopnia * liczbaStopni <= L_klatki) {
-                    schody.liczbaSchodow = liczbaStopni;
-                    schody.wysokoscSchoda = wysokoscStopnia;
-                    schody.szerokoscSchoda = szerokoscStopnia;
-                    schody.czyWyliczone = true;
+    Schody ObliczSchody(double H_klatki, double L_klatki) {
+        Schody schody = Schody();
+        double min_H_Stopnia = 15.0;
+        double max_H_Stopnia = 19.0;
+        double min_L_Stopnia = 29.0;
+        double max_L_Stopnia = 32.0;
+        for (int liczbaStopni = ceil(H_klatki / max_H_Stopnia); liczbaStopni <= floor(H_klatki / min_H_Stopnia); liczbaStopni++) {
+            double wysokoscStopnia = H_klatki / liczbaStopni;
+            if (!(wysokoscStopnia < min_H_Stopnia || wysokoscStopnia > max_H_Stopnia)) {
+                for (double szerokoscStopnia = min_L_Stopnia; szerokoscStopnia <= max_L_Stopnia; szerokoscStopnia += 0.1) {
+                    if (szerokoscStopnia * liczbaStopni <= L_klatki) {
+                        schody.liczbaSchodow = liczbaStopni;
+                        schody.wysokoscSchoda = wysokoscStopnia;
+                        schody.szerokoscSchoda = szerokoscStopnia;
+                        schody.czyWyliczone = true;
+                    }
                 }
             }
         }
+        return schody;
     }
-    return schody;
+};
+```
+Funkcja ObliczSchody oblicza najmniejszą możliwą liczbę stopni, po czym iteruje aż do maksymalnej liczby stopni. W każdej iteracji sprawdza, czy dana liczba stopni zmieści się w wymaganych wymiarach, po czym szuka odpowiedniej szerokości stopnia. Iteruje przez wszystkie przypdaki nawet po znalezieniu możliwego rozwiązania, co gwarantuje najbardziej optymalny stosunek wysokości do szerokości, oraz większe przywiązanie do wymogu wysokości.<br>
+
+
+
+
+## 3. Działanie programu:
+### 3.1. Program tworzy klasę Schody po czym wyołuje ObliczSchody by obliczyć dane schodów.
+```cpp
+int main() {
+    double H_klatki, L_klatki;
+    cout << "Podaj wysokosc klatki: ";
+    cin >> H_klatki;
+    cout << "Podaj szerokosc klatki: ";
+    cin >> L_klatki;
+    Schody schodki = Schody();
+    schodki = schodki.ObliczSchody(H_klatki, L_klatki);
+    Wypisz(schodki);
 }
 ```
-Funkcja oblicza najmniejszą możliwą liczbę stopni, po czym iteruje aż do maksymalnej liczby stopni. W każdej iteracji sprawdza, czy dana liczba stopni zmieści się w wymaganych wymiarach, po czym szuka odpowiedniej szerokości stopnia. Iteruje przez wszystkie przypdaki nawet po znalezieniu możliwego rozwiązania, co gwarantuje najbardziej optymalny stosunek wysokości do szerokości, oraz większe przywiązanie do wymogu wysokości.<br>
+### 3.2. Program posiada funkcję Wypisz, która pozwala na wypisanie danych schodów.
+```cpp
+void Wypisz(Schody stairs) {
+    if (stairs.czyWyliczone) {
+        cout << "Liczba stopni: " << stairs.liczbaSchodow << endl;
+        cout << "Wysokosc stopnia: " << stairs.wysokoscSchoda << endl;
+        cout << "Szerokosc stopnia: " << stairs.szerokoscSchoda << endl << endl;
+    }
+    else {
+        cout << "Nie udalo sie wyliczyc schodow" << endl;
+    }
+}
+```
 
 ## 4. Testy:
 Przeprowadzono testy funkcji ObliczSchody.
@@ -158,8 +172,9 @@ public class Stairs
 }
 ```
 Konstruktor przyjmuje parametry z których obliczane są wymiary schodów.
-### 5.2 Wyświetlanie interfejsu:
-Aplikacja posiada interfejs pozwalający na przymowanie danych od użytkownika oraz wypisanie wymiarów obliczonych schodów.
+
+### 5.2 Wyświetlanie interfejsu użytkownika:
+Aplikacja posiada interfejs użytkownika pozwalający na przymowanie danych od użytkownika oraz wypisanie wymiarów obliczonych schodów.
 ![image](https://github.com/user-attachments/assets/439475e9-3bdc-4367-b99f-45b6a5279aff)
 
 ### 5.3 Obsługa danych podanych przez użytkownika:
