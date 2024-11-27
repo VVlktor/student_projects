@@ -178,14 +178,16 @@ Aplikacja posiada interfejs użytkownika pozwalający na przymowanie danych od u
 ![image](https://github.com/user-attachments/assets/439475e9-3bdc-4367-b99f-45b6a5279aff)
 
 ### 5.3 Obsługa danych podanych przez użytkownika:
-Aplikacja przyjmuje dane od użytkownika z pól po czym używa klasy Stairs
+Aplikacja przyjmuje dane od użytkownika z pól po czym używa klasy Stairs do obliczeń. Następnie schody są rysowane na ekranie.
 ```cs
 private async void ObliczSchodki(object sender, EventArgs e)
 {
-    int szerokosc = int.Parse(SzerScho.Text);
-    int wysokosc = int.Parse(WysScho.Text);
-    Stairs stairs = new Stairs(wysokosc, szerokosc);
-    WynikSchodow.Text = stairs.Wypisz();
+     int szerokosc, wysokosc;
+     if (!int.TryParse(SzerScho.Text, out szerokosc) || !int.TryParse(WysScho.Text, out wysokosc))
+         return;
+     Stairs stairs = new Stairs(wysokosc, szerokosc);
+     WynikSchodow.Text = stairs.Wypisz();
+     plotno.Drawable = new MyDrawable(((ObliczoneSchody)stairs.stanSchodow).wysokoscSchoda, ((ObliczoneSchody)stairs.stanSchodow).szerokoscSchoda, ((ObliczoneSchody)stairs.stanSchodow).liczbaSchodow, szerokosc);
 }
 ```
 
