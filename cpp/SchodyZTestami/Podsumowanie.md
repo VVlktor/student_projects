@@ -186,11 +186,6 @@ private async void ObliczSchodki(object sender, EventArgs e)
     int wysokosc = int.Parse(WysScho.Text);
     Stairs stairs = new Stairs(wysokosc, szerokosc);
     WynikSchodow.Text = stairs.Wypisz();
-    while (true)
-    {
-        Chleb.Rotation += 3;
-        await Task.Delay(10);
-    }
 }
 ```
 
