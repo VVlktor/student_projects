@@ -3,19 +3,19 @@
 using namespace std;
 
 
-class Schody {
+class Stairs {
 public:
     double wysokoscSchoda;
     double szerokoscSchoda;
     int liczbaSchodow;
     bool czyWyliczone;
 
-    Schody() {
+    Stairs() {
         czyWyliczone = false;
     }
 
-    Schody ObliczSchody(double H_klatki, double L_klatki) {
-        Schody schody = Schody();
+    Stairs ObliczSchody(double H_klatki, double L_klatki) {
+        Stairs schody = Stairs();
         double min_H_Stopnia = 15.0;
         double max_H_Stopnia = 19.0;
         double min_L_Stopnia = 29.0;
