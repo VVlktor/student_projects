@@ -3,7 +3,7 @@
 
 using namespace std;
 
-void Wypisz(Schody stairs) {
+void Wypisz(Stairs stairs) {
     if (stairs.czyWyliczone) {
         cout << "Liczba stopni: " << stairs.liczbaSchodow << endl;
         cout << "Wysokosc stopnia: " << stairs.wysokoscSchoda << endl;
