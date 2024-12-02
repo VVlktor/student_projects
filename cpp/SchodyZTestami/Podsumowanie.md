@@ -174,8 +174,9 @@ public record ObliczoneSchody(double wysokoscSchoda, double szerokoscSchoda, int
 ```
 
 ### 5.2 Wyświetlanie interfejsu użytkownika:
-Aplikacja posiada interfejs użytkownika pozwalający na przymowanie danych od użytkownika oraz wypisanie wymiarów obliczonych schodów.
-![image](https://github.com/user-attachments/assets/439475e9-3bdc-4367-b99f-45b6a5279aff)
+Aplikacja posiada interfejs użytkownika pozwalający na przymowanie danych od użytkownika oraz wypisanie wymiarów obliczonych schodów.<br>Aplikacja wyświetla również rysunek schodów.
+![image](https://github.com/user-attachments/assets/2ae8b523-5b18-4a98-b03c-236f4011049f)
+
 
 ### 5.3 Obsługa danych podanych przez użytkownika:
 Aplikacja przyjmuje dane od użytkownika z pól po czym używa klasy Stairs do obliczeń. Następnie schody są rysowane na ekranie.
